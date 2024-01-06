@@ -2,6 +2,7 @@ package utils;
 
 import pages.HomePage;
 import pages.WebAutomationPage;
+import pages.alerts.AlertTypes_Page;
 import pages.draggable.AutoScrolling_Page;
 import pages.draggable.Draggable_DefFunc_Page;
 import pages.droppable.Droppable_DefFunc_Page;
@@ -11,6 +12,7 @@ import pages.selectable.Selectable_DefFunc_Page;
 
 public class Pages {
 
+    private AlertTypes_Page alertTypesPage;
     private AutoScrolling_Page autoScrollingPage;
 
     private Draggable_DefFunc_Page draggableDefFuncPage;
@@ -35,6 +37,7 @@ public class Pages {
         resizableDefFuncPage = new Resizable_DefFunc_Page();
         selectableDefFuncPage = new Selectable_DefFunc_Page();
         nestedIframePage = new NestedIframe_Page();
+        alertTypesPage = new AlertTypes_Page();
 
     }
 
@@ -66,8 +69,12 @@ public class Pages {
         return selectableDefFuncPage;
     }
 
-    public NestedIframe_Page nestedIframePage(){
+    public NestedIframe_Page getNestedIframePage(){
         return nestedIframePage;
+    }
+
+    public AlertTypes_Page getAlertTypesPage(){
+        return alertTypesPage;
     }
 
 }
