@@ -6,34 +6,34 @@ import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
 public class AlertTypes_Page extends BasePage {
+
+    Alert alert;
+
     @FindBy(xpath = "//button[text()='Show Alert']")
     private WebElement showAlertButton;
-
-    @FindBy(xpath = "//button[text()='Show Confirm']")
-    private WebElement showConfirmButton;
 
     @FindBy(xpath = "//button[text()='Show Prompt']")
     private WebElement showPromptButton;
 
-    Alert alert;
+    @FindBy(xpath = "//button[text()='Show Confirm']")
+    private WebElement showConfirmButton;
+
+    public void clickOnShowAlertButton(){
+        showAlertButton.click();
+    }
 
     public void switchToAlert(){
         alert = DRIVER.switchTo().alert();
     }
 
-    public String getTextInAlert(){
-        switchToAlert();
-        return alert.getText();
-    }
-
-    public void confirmAlert(){
+    public void confirmTheAlert(){
         switchToAlert();
         alert.accept();
     }
 
-    public void dismissAlert(){
+    public String getTextOfTheAlert(){
         switchToAlert();
-        alert.dismiss();
+        return alert.getText();
     }
 
     public void enterInputIntoAlert(String input){
@@ -41,7 +41,8 @@ public class AlertTypes_Page extends BasePage {
         alert.sendKeys(input);
     }
 
-    public void clickOnShowAlertButton(){
-        showAlertButton.click();
+    public void cancelTheAlert(){
+        switchToAlert();
+        alert.dismiss();
     }
 }

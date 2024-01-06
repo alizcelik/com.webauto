@@ -34,6 +34,9 @@ public class WebAutomationPage extends BasePage {
     @FindBy(linkText = "Alerts")
     private WebElement alertsLink;
 
+    @FindBy(linkText = "Animate")
+    private WebElement animateLink;
+
     public void clickOnDraggableLink() {
         draggableLink.click();
     }
@@ -79,5 +82,9 @@ public class WebAutomationPage extends BasePage {
 
     public void clickOnAlertsLink(){
         alertsLink.click();
+    }
+
+    public void clickOnAnimateLink(){
+        animateLink.click();
     }
 }

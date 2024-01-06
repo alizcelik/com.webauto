@@ -32,6 +32,10 @@ public class BrowserUtils {
         }
     }
 
+    public static String getTitle(){
+        return Driver.getDriver().getTitle();
+    }
+
 
 
 }

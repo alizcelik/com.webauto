@@ -7,12 +7,16 @@ import pages.draggable.AutoScrolling_Page;
 import pages.draggable.Draggable_DefFunc_Page;
 import pages.droppable.Droppable_DefFunc_Page;
 import pages.iframe.NestedIframe_Page;
+import pages.resizable.Animate_Page;
 import pages.resizable.Resizable_DefFunc_Page;
 import pages.selectable.Selectable_DefFunc_Page;
 
 public class Pages {
 
     private AlertTypes_Page alertTypesPage;
+
+    private Animate_Page animatePage;
+
     private AutoScrolling_Page autoScrollingPage;
 
     private Draggable_DefFunc_Page draggableDefFuncPage;
@@ -38,6 +42,7 @@ public class Pages {
         selectableDefFuncPage = new Selectable_DefFunc_Page();
         nestedIframePage = new NestedIframe_Page();
         alertTypesPage = new AlertTypes_Page();
+        animatePage = new Animate_Page();
 
     }
 
@@ -75,6 +80,10 @@ public class Pages {
 
     public AlertTypes_Page getAlertTypesPage(){
         return alertTypesPage;
+    }
+
+    public Animate_Page getAnimatePage(){
+        return animatePage;
     }
 
 }

@@ -3,21 +3,28 @@ package pages.iframe;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import utils.BrowserUtils;
 
 public class NestedIframe_Page extends BasePage {
-    @FindBy(xpath = "(//iframe[@id='courses-iframe'])[2]")
-    private WebElement nestedIframe;
 
     @FindBy(css = "h1")
-    private WebElement header;
+    private WebElement headerInFrame;
 
-    public void switchToIframe(){
-        DRIVER.switchTo().frame(nestedIframe);
+    @FindBy(xpath = "(//iframe)[4]")
+    private WebElement iFrameElement;
+
+    public void switchToIFrame(){
+        DRIVER.switchTo().frame(iFrameElement);
     }
 
-    public String getHeaderText(){
-        switchToIframe();
-        return header.getText();
+    public String getHeaderInFrame(){
+        switchToIFrame();
+        return headerInFrame.getText();
     }
+
+    public void printTitle(){
+        System.out.println(DRIVER.switchTo().frame(iFrameElement).getTitle());
+    }
+
 
 }

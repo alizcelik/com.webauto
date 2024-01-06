@@ -1,9 +1,10 @@
 package iframeTest;
 
 import BaseTest.Hooks;
-import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import utils.BrowserUtils;
+import utils.Driver;
 
 /**
  * 1. Land on home page
@@ -31,11 +32,13 @@ public class NestedIframe_Test extends Hooks {
         pages.getWebAutomationPage().clickOnNestedIframe();
 
         //5.Verify that the header text "Join Inar Academy'sIntro Session" In iframe
-        String actualHeader = pages.getNestedIframePage().getHeaderText();
         String expectedHeader = "Join Inar Academy's\n" +
                 "Intro Session";
 
-        Assertions.assertThat(expectedHeader).isEqualTo(actualHeader);
+
+        String actualHeader = pages.getNestedIframePage().getHeaderInFrame();
+        Assertions.assertEquals(expectedHeader, actualHeader, "Wrong Header !");
+
 
     }
 }
