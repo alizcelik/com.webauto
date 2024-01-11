@@ -1,6 +1,8 @@
 package utils;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class BrowserUtils {
@@ -32,6 +34,13 @@ public class BrowserUtils {
         }
     }
 
+    public static boolean theElementIsDisplayed(WebElement webElement){
+        try{
+            return webElement.isDisplayed();
+        }catch (NoSuchElementException e){
+            return false;
+        }
+    }
     public static String getTitle(){
         return Driver.getDriver().getTitle();
     }

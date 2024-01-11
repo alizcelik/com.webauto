@@ -37,6 +37,12 @@ public class WebAutomationPage extends BasePage {
     @FindBy(linkText = "Animate")
     private WebElement animateLink;
 
+    @FindBy(linkText = "Autocomplete")
+    private WebElement autoCompleteLink;
+
+    @FindBy(linkText = "Multiple & Remote")
+    private WebElement multipleAndRemoteLink;
+
     public void clickOnDraggableLink() {
         draggableLink.click();
     }
@@ -86,5 +92,13 @@ public class WebAutomationPage extends BasePage {
 
     public void clickOnAnimateLink(){
         animateLink.click();
+    }
+
+    public void clickOnAutoCompleteLink(){
+        autoCompleteLink.click();
+    }
+
+    public void clickOnMultipleAndRemoteLink(){
+        multipleAndRemoteLink.click();
     }
 }

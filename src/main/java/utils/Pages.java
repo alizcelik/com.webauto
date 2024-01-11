@@ -3,6 +3,7 @@ package utils;
 import pages.HomePage;
 import pages.WebAutomationPage;
 import pages.alerts.AlertTypes_Page;
+import pages.autoComplete.MultipleAndRemote_Page;
 import pages.draggable.AutoScrolling_Page;
 import pages.draggable.Draggable_DefFunc_Page;
 import pages.droppable.Droppable_DefFunc_Page;
@@ -25,6 +26,8 @@ public class Pages {
 
     private HomePage homePage;
 
+    private MultipleAndRemote_Page multipleAndRemotePage;
+
     private NestedIframe_Page nestedIframePage;
 
     private Resizable_DefFunc_Page resizableDefFuncPage;
@@ -43,6 +46,7 @@ public class Pages {
         nestedIframePage = new NestedIframe_Page();
         alertTypesPage = new AlertTypes_Page();
         animatePage = new Animate_Page();
+        multipleAndRemotePage = new MultipleAndRemote_Page();
 
     }
 
@@ -86,4 +90,7 @@ public class Pages {
         return animatePage;
     }
 
+    public MultipleAndRemote_Page getMultipleAndRemotePage(){
+        return multipleAndRemotePage;
+    }
 }
